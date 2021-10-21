@@ -4,38 +4,84 @@
   <head>
     <title>Jorge Mario - DoWhile 2021</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    
     <main>
       <div class="container">
-
         <div class="avatar">
           <span>
-            <img src="imagens/rocketseat.svg" alt="Selo Rocketseat">
+            <img src="imagens/rocketseat.svg" alt="Selo Rocketseat" />
           </span>
-          <img src="https://lorempixel.com/185/185/people/" alt="Foto Pessoal">
+          <img
+            src="https://lorempixel.com/185/185/people/"
+            alt="Foto Pessoal"
+          />
         </div>
 
-        <h1>Jorge Mario</h1>
-        <a href="https://github.com/gemario" target="_blank" >
-          <img src="imagens/github.svg" alt="ícone github"> gemario</a>
+        <h1 id="userName">Jorge Mario</h1>
+        <a href="https://github.com/gemario" target="_blank">
+          <img src="imagens/github.svg" alt="ícone github" /> gemario</a
+        >
 
-          <p>An instructor focused on helping pople start programming for web</p>
+        <p>An instructor focused on helping pople start programming for web</p>
 
-          <ul>
-            <li><a href="https://www.youtube.com/" target="_blank" ><img src="imagens/youtube.svg" alt="ícone youtube"></a></li>
-            <li><a href="https://www.instagram.com/jorgee_mariobjj/" target="_blank" ><img src="imagens/instagram.svg" alt="ícone instagram"></a></li>
-            <li><a href="https://www.facebook.com/jorge.mario.330467/" target="_blank" ><img src="imagens/facebook.svg" alt="ícone facebook"></a></li>
-            <li><a href="https://twitter.com/" target="_blank" ><img src="imagens/twitter.svg" alt="ícone twitter"></a></li>
-          </ul>
-
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a
+              href="https://www.youtube.com/channel/UCEZmF566-K73ql7eXduQsyg"
+              target="_blank"
+              ><img src="imagens/youtube.svg" alt="ícone youtube"
+            /></a>
+          </li>
+          <li class="instagram">
+            <a href="https://www.instagram.com/jorgee_mariobjj/" target="_blank"
+              ><img src="imagens/instagram.svg" alt="ícone instagram"
+            /></a>
+          </li>
+          <li class="facebook">
+            <a
+              href="https://www.facebook.com/jorge.mario.330467/"
+              target="_blank"
+              ><img src="imagens/facebook.svg" alt="ícone facebook"
+            /></a>
+          </li>
+          <li class="twitter">
+            <a href="https://twitter.com/geemarioo" target="_blank"
+              ><img src="imagens/twitter.svg" alt="ícone twitter"
+            /></a>
+          </li>
+        </ul>
       </div>
     </main>
+
+    <script>
+      const linksSocialMedia = {
+        github: 'gemario',
+        youtube: 'channel/UCEZmF566-K73ql7eXduQsyg',
+        instagram: 'jorgee_mariobjj',
+        facebook: 'jorge.mario.330467',
+        twitter: 'geemarioo'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+
+          alert(li.children[0].href)
+        }
+      }
+
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
